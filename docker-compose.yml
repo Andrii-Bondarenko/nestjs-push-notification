@@ -1,0 +1,24 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      PG_DATA: /var/lib/postgresql/data
+      POSTGRES_USER: userService
+      POSTGRES_PASSWORD: ALpngaUj4Ab7
+      POSTGRES_DB: OBRIO
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  user-service:
+    build: ./user-service
+    env_file:
+      - ./user-service/.env
+    depends_on:
+      - postgres
+    ports:
+    - "3000:3000"
+
+volumes:
+  db-data:
