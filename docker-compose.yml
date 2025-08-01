@@ -9,7 +9,7 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - 5432:5432
 
   user-service:
     build: ./user-service
@@ -17,8 +17,18 @@ services:
       - ./user-service/.env
     depends_on:
       - postgres
+      - rabbitmq
     ports:
-    - "3000:3000"
+      - 3000:3000
+
+  rabbitmq:
+    environment:
+      RABBITMQ_DEFAULT_USER: rabbitmq
+      RABBITMQ_DEFAULT_PASS: password
+    build: ./rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
 
 volumes:
   db-data:
