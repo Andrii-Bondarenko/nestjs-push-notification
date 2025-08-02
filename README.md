@@ -54,7 +54,7 @@ This project contains two microservices: **User Service** and **Notification Ser
 3. Access the services:
 
     - User Service API: [http://localhost:3000](http://localhost:3000)
-    - Notification Service API (if exposed): [http://localhost:5000](http://localhost:5000)
+    - Notification Service API: [http://localhost:5000](http://localhost:5000)
     - RabbitMQ Management UI: [http://localhost:15672](http://localhost:15672)
 
 ---
@@ -70,7 +70,7 @@ cp ./user-service/.env.example ./user-service/.env
 
 ```bash
 cp ./notification-service/.env.example ./notification-service/.env
-
+```
 ---
 
 ## 📡 How It Works

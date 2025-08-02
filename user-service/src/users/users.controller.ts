@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, UsePipes, ValidationPipe } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { NotificationEventPublisher } from '../notifications/notification-event-publisher.service';
@@ -11,6 +11,7 @@ export class UsersController {
   ) {}
 
   @Post()
+  @UsePipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }))
   async create(@Body() createUserDto: CreateUserDto) {
     const user = await this.userService.create(createUserDto);
 
