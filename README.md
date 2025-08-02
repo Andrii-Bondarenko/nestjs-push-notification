@@ -44,14 +44,23 @@ This project contains two microservices: **User Service** and **Notification Ser
     git clone <your-repo-url>
     cd <your-repo>
     ```
+2. Create .env files:
 
-2. Start all services:
+    ```bash
+    cp ./user-service/.env.example ./user-service/.env
+    ```
+
+    ```bash
+    cp ./notification-service/.env.example ./notification-service/.env
+    ```
+
+3. Start all services:
 
     ```bash
     docker-compose up --build
     ```
 
-3. Access the services:
+4. Access the services:
 
     - User Service API: [http://localhost:3000](http://localhost:3000)
     - Notification Service API: [http://localhost:5000](http://localhost:5000)
@@ -59,17 +68,15 @@ This project contains two microservices: **User Service** and **Notification Ser
 
 ---
 
-## 📝 Environment Variables
-
-Each service uses its own `.env` file:
-Create .env files:
+## 🧪 Example API Request (User Service)
 
 ```bash
-cp ./user-service/.env.example ./user-service/.env
-```
+POST http://localhost:3000/users
+Content-Type: application/json
 
-```bash
-cp ./notification-service/.env.example ./notification-service/.env
+{
+  "name": "Andrii"
+}
 ```
 ---
 
