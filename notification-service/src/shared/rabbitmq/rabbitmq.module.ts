@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { RABBITMQ_SETTINGS } from 'src/shared/rabbitmq/rabbitmq.config';
 import { RabbitMQModule } from '@golevelup/nestjs-rabbitmq';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
@@ -49,7 +50,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       },
     })  
   ],
-  exports: [RabbitMQModule],
+  exports: [RabbitMQModule]
 })
 
 export class RabbitMQClientModule {}

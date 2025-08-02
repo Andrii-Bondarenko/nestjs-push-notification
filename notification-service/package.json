@@ -1,5 +1,5 @@
 {
-  "name": "user-service",
+  "name": "notification-service",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -26,13 +26,9 @@
     "@nestjs/core": "^11.0.1",
     "@nestjs/mapped-types": "^2.1.0",
     "@nestjs/platform-express": "^11.0.1",
-    "@nestjs/typeorm": "^11.0.0",
     "amqp-connection-manager": "^4.1.14",
     "amqplib": "^0.10.8",
-    "pg": "^8.16.3",
-    "reflect-metadata": "^0.2.2",
-    "rxjs": "^7.8.1",
-    "typeorm": "^0.3.25"
+    "axios": "^1.11.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",

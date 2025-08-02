@@ -3,10 +3,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersService } from './users.service';
 import { UsersController } from './users.controller';
 import { User } from './entities/user.entity';
-import { RabbitMQClientModule } from '../shared/rabbitmg/rabbitmg.module';
+import { NotificationProducerModule } from 'src/notifications/notification-event-publisher.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User]), RabbitMQClientModule],
+  imports: [TypeOrmModule.forFeature([User]), NotificationProducerModule],
   controllers: [UsersController],
   providers: [UsersService]
 })

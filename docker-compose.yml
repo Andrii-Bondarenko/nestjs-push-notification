@@ -29,6 +29,14 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
+  notification-service:
+    build: ./notification-service
+    env_file:
+      - ./notification-service/.env
+    depends_on:
+      - rabbitmq
+    ports:
+    - "5000:5000"
 
 volumes:
   db-data:
